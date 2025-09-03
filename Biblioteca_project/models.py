@@ -2,57 +2,6 @@ from django.db import models
 
 # Create your models here.
 
-class Modelo_1(models.Model):
-    # Campo de tipo AUTO INCREMENTAL, usado para ID's
-    campo_1_modelo_1 = models.AutoField(primary_key=True)
-
-    # CharField para textos cortos y medianos, requiere indicar el largo máximo del campo
-    campo_2_modelo_1 = models.CharField(max_length=200, null=False)
-
-    # TextField para textos largos
-    campo_3_modelo_1 = models.TextField(default="Texto")
-
-
-class Modelo_2(models.Model):
-    # Campo de tipo AUTO INCREMENTAL
-    campo_1_modelo_2 = models.AutoField(primary_key=True)
-
-    # Campo de tipo RELACIÓN: cada objeto de Modelo_2 está relacionado con un objeto de Modelo_1
-    campo_2_modelo_2 = models.ForeignKey(Modelo_1, on_delete=models.CASCADE)
-
-    # Campo tipo FECHA
-    campo_3_modelo_2 = models.DateField()
-
-    # Campo tipo HORA
-    campo_4_modelo_2 = models.TimeField()
-
-    # Campo tipo FECHA con HORA
-    campo_5_modelo_2 = models.DateTimeField()
-
-    # Campo tipo ENTERO
-    campo_6_modelo_2 = models.IntegerField()
-
-    # Campo tipo DECIMAL: se debe indicar la cantidad máxima de dígitos y cantidad de decimales
-    campo_7_modelo_2 = models.DecimalField(max_digits=10, decimal_places=2)
-
-    # Campo tipo FLOTANTE
-    campo_8_modelo_2 = models.FloatField()
-
-    # Campo tipo BOOLEANO
-    campo_9_modelo_2 = models.BooleanField()
-
-    # Campo tipo CORREO
-    campo_10_modelo_2 = models.EmailField()
-
-    # Campo tipo URL
-    campo_11_modelo_2 = models.URLField()
-
-    # Campo tipo ARCHIVO
-    campo_12_modelo_2 = models.FileField(upload_to="archivos/")
-
-    # Campo tipo IMAGEN
-    campo_13_modelo_2 = models.ImageField(upload_to="imagenes/")
-
 class Comuna(models.Model):
     codigo = models.CharField(max_length=5, null=False)
     nombre_comuna = models.CharField(max_length=50, null=False)

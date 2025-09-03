@@ -1,9 +1,8 @@
 from django.contrib import admin
-from .models import Modelo_1, Modelo_2, Comuna, Nacionalidad, Direccion, Autor, Biblioteca, Categoria, Libro, Lector, Prestamo
+from .models import Comuna, Nacionalidad, Direccion, Autor, Biblioteca, Categoria, Libro, Lector, Prestamo
 
 # Register your models here.
-admin.site.register(Modelo_1)
-admin.site.register(Modelo_2)
+
 admin.site.register(Comuna)
 admin.site.register(Nacionalidad)
 admin.site.register(Direccion)
