@@ -2,8 +2,25 @@ from django.shortcuts import render
 from rest_framework import viewsets 
 from .serializer import ComunaSerializer, NacionalidadSerializer, DireccionSerializer, AutorSerializer, BibliotecaSerializer, CategoriaSerializer, LibroSerializer, LectorSerializer, PrestamoSerializer
 from .models import Comuna, Nacionalidad, Direccion, Autor, Biblioteca, Categoria, Libro, Lector, Prestamo
+from django.views.generic import TemplateView
+
 
 # Create your views here.
+
+class InicioPaginaView(TemplateView): #la vista basada en clases que renderiza la plantilla de inicio
+    template_name = 'Biblioteca_project/inicio.html'
+
+class MenuPrincipalView(TemplateView):
+    template_name = 'Biblioteca_project/menu.html'
+
+class LectoresView(TemplateView):
+    template_name = 'Biblioteca_project/lectores.html'
+
+class AutoresView(TemplateView):
+    template_name = 'Biblioteca_project/autores.html'
+
+class LibrosView(TemplateView):
+    template_name = 'Biblioteca_project/libros.html'
 
 class ComunaViewSet(viewsets.ModelViewSet):
     queryset = Comuna.objects.all()
